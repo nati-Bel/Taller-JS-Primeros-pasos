@@ -6,6 +6,8 @@ let numeroDeObras = 150;
 let vivo= false;
 document.write (nombre, apellido, numeroDeObras, vivo)
 
+
+
 let operacionUno = numeroDeObras + 20
 let operacionDos = numeroDeObras -23
 let operacionTres = numeroDeObras * 4
@@ -57,6 +59,7 @@ function tellDoors () {
     console.log (car.numberOfDoors)
     document.write(car.numberOfDoors)
 }
+
 tellDoors()
 
 function tellBrand () {
@@ -75,17 +78,85 @@ tellNewPrice()
 
 let NatisArray = [34, 23, 4, 7, 21, 11,2,9,5, 41]
 
-function allNumbers () {
-    console.log (NatisArray);
-    document.write (NatisArray);
+/* 
+for (let i=0; i<NatisArray.length;i++) {
+    console.log (NatisArray[i]);
+    document.write  (NatisArray[i]);
+} */
+
+// function addNumber (newNumber) {
+//     NatisArray.push(newNumber);
+// }
+
+// addNumber(1);
+// allNumbers ();
+
+/* NatisArray=NatisArray.filter(e =>e%2 ===0);
+console.log(NatisArray);
+document.write(NatisArray); */
+
+function highestNumber () {
+    const highest=Math.max(...NatisArray);
+    console.log (highest);
+    document.write(highest);
 }
-allNumbers()
+highestNumber ();
 
-function addNumber (newNumber) {
-    NatisArray.push(newNumber);
+function lowestNumber() {
+  const lowest = Math.min(...NatisArray);
+  console.log(lowest);
+  document.write(lowest);
+}
+lowestNumber();
+
+let myText=("This is my text")
+function capitalizeText () {
+    let myNewText = myText.toUpperCase ()
+    console.log(myNewText)
+    document.write(myNewText)
+}
+capitalizeText();
+
+let MyOtherText=("This is my other text")
+function lowerCaseText () {
+    let myNewLowerText = MyOtherText.toLowerCase ()
+    console.log(myNewLowerText);
+    document.write(myNewLowerText);
+}
+lowerCaseText ()
+
+let myNamesArr = ["suni, fon, nachete"]
+for (let i=0; i<myNamesArr.length; i++) {
+    myNamesArr[i] = myNamesArr[i].charAt(0).toUpperCase() + myNamesArr[i].slice(1);
+    console.log(myNamesArr[i]);
+    document.write(myNamesArr[i]);
 }
 
-addNumber(1)
-allNumbers ()
+//DOM
+
+function showMessage () {
+    alert ("Coffee or tea?")
+}
+let button= document.querySelector (".button");
+button.addEventListener("click", showMessage);
+
+let headline = document.getElementById ("headlineOne");
+headline.textContent = "Javascript mola, se merece una ola";
 
 
+function showHide() {
+  var fantoma = document.getElementById("text");
+  if (fantoma.style.display === "none") {
+    fantoma.style.display = "block";
+  } else {
+    fantoma.style.display = "none";
+  }
+}
+
+let namesArray = [["Kika", "Lubi", "Reni", "Sami", "Fon", "Peti", "Max", "Atos", "Suni", "Tina" ]];
+for (let i = 0; i < namesArray.length; i++) {
+    console.log(namesArray[i]);
+    document.write(namesArray[i]);
+}
+
+let table = document.createElement("TABLE");
