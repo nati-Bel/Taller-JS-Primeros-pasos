@@ -153,10 +153,66 @@ function showHide() {
   }
 }
 
-let namesArray = [["Kika", "Lubi", "Reni", "Sami", "Fon", "Peti", "Max", "Atos", "Suni", "Tina" ]];
-for (let i = 0; i < namesArray.length; i++) {
+let namesArray = ["Kika", "Lubi", "Reni", "Sami", "Fon", "Peti", "Max", "Atos", "Suni", "Tina" ];
+/* for (let i = 0; i < namesArray.length; i++) {
     console.log(namesArray[i]);
     document.write(namesArray[i]);
+} */
+let list = document.getElementById("my-list");
+for (i = 0; i<namesArray.length;i++) {
+    let li = document.createElement("li");
+    li.innerText = namesArray[i];
+    list.appendChild(li)
 }
 
-let table = document.createElement("TABLE");
+let digitArray = [34, 23, 4, 7, 21, 11, 2, 9, 5, 41];
+
+let digitNumber = digitArray.length;
+function tellNumber () {
+    let sentence = document.getElementById("digitSentence");
+    sentence.textContent=`The hidden array has ${digitNumber} numbers`;
+}
+tellNumber();
+
+function createForm() {
+    let form=document.createElement("form");
+    let title=document.createElement("label");
+    let textBox=document.createElement("input");
+
+    form.appendChild(title);
+    form.appendChild(textBox);
+
+    document.getElementById("myForm").appendChild(form);
+
+}
+createForm();
+
+function createTable () {
+    let table=document.createElement("table");
+    let tblBody=document.createElement("tbody");
+
+    table.appendChild(tblBody);
+    document.getElementById("myTable").appendChild(table);
+
+    let rowOne = document.createElement("tr");
+    let inputOne = document.createElement("th");
+    inputOne.innerHTML = "Country";
+    let inputTwo = document.createElement("th");
+    inputTwo.innerHTML = "Capital";
+
+    rowOne.appendChild(inputOne);
+    rowOne.appendChild(inputTwo);
+    tblBody.appendChild(rowOne);
+
+    let rowTwo= document.createElement("tr");
+    let rowTwoInputOne = document.createElement("td");
+    rowTwoInputOne.innerHTML ="Slovakia";
+    let rowTwoInputTwo = document.createElement("td");
+    rowTwoInputTwo.innerHTML = "Bratislava";
+
+    rowTwo.appendChild(rowTwoInputOne);
+    rowTwo.appendChild(rowTwoInputTwo);
+    tblBody.appendChild(rowTwo);
+
+}
+createTable();
